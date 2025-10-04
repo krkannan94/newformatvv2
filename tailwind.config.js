@@ -1,0 +1,116 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        'cbre-primary': '#0B3122',
+        'cbre-accent': '#1C4E36',
+        'cbre-light': '#F8FAF9',
+        // iOS system colors
+        'ios-blue': '#007AFF',
+        'ios-green': '#34C759',
+        'ios-red': '#FF3B30',
+        'ios-orange': '#FF9500',
+        'ios-yellow': '#FFCC02',
+        'ios-purple': '#AF52DE',
+        'ios-pink': '#FF2D92',
+        'ios-teal': '#5AC8FA',
+        'ios-gray': '#8E8E93',
+        'ios-gray2': '#AEAEB2',
+        'ios-gray3': '#C7C7CC',
+        'ios-gray4': '#D1D1D6',
+        'ios-gray5': '#E5E5EA',
+        'ios-gray6': '#F2F2F7',
+        'ios-separator': '#C6C6C8',
+        'ios-overlay': '#00000066',
+        'ios-background': '#F2F2F7',
+        'ios-secondary-background': '#FFFFFF',
+        'ios-tertiary-background': '#F2F2F7',
+      },
+      fontFamily: {
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'San Francisco',
+          'SF Pro Display',
+          'SF Pro Text',
+          'Helvetica Neue',
+          'Arial',
+          'sans-serif'
+        ],
+      },
+      fontSize: {
+        'ios-large-title': ['34px', { lineHeight: '41px', fontWeight: '700' }],
+        'ios-title1': ['28px', { lineHeight: '34px', fontWeight: '700' }],
+        'ios-title2': ['22px', { lineHeight: '28px', fontWeight: '700' }],
+        'ios-title3': ['20px', { lineHeight: '25px', fontWeight: '600' }],
+        'ios-headline': ['17px', { lineHeight: '22px', fontWeight: '600' }],
+        'ios-body': ['17px', { lineHeight: '22px', fontWeight: '400' }],
+        'ios-callout': ['16px', { lineHeight: '21px', fontWeight: '400' }],
+        'ios-subhead': ['15px', { lineHeight: '20px', fontWeight: '400' }],
+        'ios-footnote': ['13px', { lineHeight: '18px', fontWeight: '400' }],
+        'ios-caption1': ['12px', { lineHeight: '16px', fontWeight: '400' }],
+        'ios-caption2': ['11px', { lineHeight: '13px', fontWeight: '400' }],
+      },
+      spacing: {
+        'ios-xs': '4px',
+        'ios-sm': '8px',
+        'ios-md': '16px',
+        'ios-lg': '24px',
+        'ios-xl': '32px',
+        'ios-2xl': '48px',
+      },
+      borderRadius: {
+        'ios-sm': '6px',
+        'ios-md': '10px',
+        'ios-lg': '14px',
+        'ios-xl': '20px',
+        'ios-2xl': '28px',
+      },
+      boxShadow: {
+        'ios-sm': '0 1px 3px rgba(0, 0, 0, 0.1)',
+        'ios-md': '0 4px 6px rgba(0, 0, 0, 0.07)',
+        'ios-lg': '0 10px 15px rgba(0, 0, 0, 0.1)',
+        'ios-xl': '0 20px 25px rgba(0, 0, 0, 0.1)',
+        'ios-card': '0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1)',
+        'ios-button': '0 1px 2px rgba(0, 0, 0, 0.1)',
+      },
+      animation: {
+        'ios-fade-in': 'iosFadeIn 0.3s ease-out',
+        'ios-slide-up': 'iosSlideUp 0.3s ease-out',
+        'ios-slide-down': 'iosSlideDown 0.3s ease-out',
+        'ios-scale': 'iosScale 0.2s ease-out',
+        'ios-bounce': 'iosBounce 0.6s ease-out',
+      },
+      keyframes: {
+        iosFadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        iosSlideUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        iosSlideDown: {
+          '0%': { opacity: '0', transform: 'translateY(-20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        iosScale: {
+          '0%': { transform: 'scale(0.95)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        iosBounce: {
+          '0%, 20%, 53%, 80%, 100%': { transform: 'scale(1)' },
+          '40%, 43%': { transform: 'scale(1.08)' },
+          '70%': { transform: 'scale(1.02)' },
+          '90%': { transform: 'scale(1.01)' },
+        },
+      },
+      backdropBlur: {
+        'ios': '20px',
+      },
+    },
+  },
+  plugins: [],
+};

@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #F2F2F7;
+    color: #1C1C1E;
+    line-height: 1.5;
+  }
+}
+
+@layer components {
+  /* iOS-style form controls */
+  .ios-input {
+    @apply w-full px-ios-md py-3 bg-ios-secondary-background border border-ios-separator rounded-ios-md text-ios-body text-black placeholder-ios-gray transition-all duration-200 ease-out;
+    @apply focus:outline-none focus:ring-2 focus:ring-ios-blue focus:border-ios-blue;
+    @apply hover:border-ios-gray3;
+    min-height: 44px; /* iOS minimum touch target */
+  }
+  
+  .ios-select {
+    @apply ios-input appearance-none bg-no-repeat bg-right bg-origin-padding;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%238E8E93' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-size: 16px 16px;
+    padding-right: 48px;
+  }
+  
+  .ios-button-primary {
+    @apply px-ios-lg py-3 bg-ios-blue text-white font-medium rounded-ios-md shadow-ios-button transition-all duration-200 ease-out;
+    @apply hover:bg-opacity-80 active:scale-95;
+    @apply focus:outline-none focus:ring-2 focus:ring-ios-blue focus:ring-offset-2;
+    min-height: 44px;
+  }
+  
+  .ios-button-secondary {
+    @apply px-ios-lg py-3 bg-ios-gray6 text-ios-blue font-medium rounded-ios-md shadow-ios-button transition-all duration-200 ease-out;
+    @apply hover:bg-ios-gray5 active:scale-95;
+    @apply focus:outline-none focus:ring-2 focus:ring-ios-blue focus:ring-offset-2;
+    min-height: 44px;
+  }
+  
+  .ios-button-destructive {
+    @apply px-ios-lg py-3 bg-ios-red text-white font-medium rounded-ios-md shadow-ios-button transition-all duration-200 ease-out;
+    @apply hover:bg-opacity-80 active:scale-95;
+    @apply focus:outline-none focus:ring-2 focus:ring-ios-red focus:ring-offset-2;
+    min-height: 44px;
+  }
+  
+  .ios-card {
+    @apply bg-ios-secondary-background rounded-ios-lg shadow-ios-card;
+  }
+  
+  .ios-modal-backdrop {
+    @apply fixed inset-0 bg-ios-overlay backdrop-blur-ios z-50;
+    animation: iosFadeIn 0.3s ease-out;
+  }
+  
+  .ios-modal {
+    @apply bg-ios-secondary-background rounded-t-ios-xl shadow-ios-xl;
+    animation: iosSlideUp 0.3s ease-out;
+  }
+  
+  /* Custom scrollbar for iOS feel */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  /* iOS-style list items */
+  .ios-list-item {
+    @apply flex items-center justify-between py-3 px-ios-md bg-ios-secondary-background border-b border-ios-separator transition-colors duration-150;
+    @apply hover:bg-ios-gray6 active:bg-ios-gray5;
+    min-height: 44px;
+  }
+  
+  /* iOS-style navigation */
+  .ios-nav-bar {
+    @apply bg-ios-secondary-background border-b border-ios-separator backdrop-blur-ios bg-opacity-80;
+  }
+  
+  /* iOS-style status indicators */
+  .ios-badge {
+    @apply px-2 py-0.5 bg-ios-red text-white text-ios-caption1 font-medium rounded-full min-w-[20px] h-5 flex items-center justify-center;
+  }
+  
+  .ios-badge-green {
+    @apply ios-badge bg-ios-green;
+  }
+  
+  .ios-badge-blue {
+    @apply ios-badge bg-ios-blue;
+  }
+  
+  .ios-badge-gray {
+    @apply ios-badge bg-ios-gray text-white;
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* iOS-style focus states */
+.ios-focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-ios-blue focus:ring-offset-2 focus:ring-offset-ios-background;
+}
+
+/* Disable default focus styles and use iOS-style */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* iOS-style touch feedback */
+.ios-touch-feedback {
+  @apply active:bg-opacity-80 active:scale-95;
+  transition: all 0.1s ease-out;
+}
+
+/* Haptic-style animation for buttons */
+@keyframes haptic {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.ios-haptic {
+  animation: haptic 0.1s ease-out;
+}
